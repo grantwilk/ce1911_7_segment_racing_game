@@ -1,2 +1,2 @@
-# ce1911_7_segment_racing_game
- An FSM based 2-player racing game made with VHDL.
+# 7-Segment Racing Game
+Learn more about this project **[here](https://grantwilk.com/portfolio/7-segment-racing-game/)**.
