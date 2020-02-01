@@ -1,0 +1,419 @@
+Analysis & Synthesis report for RACE
+Fri Jan 31 15:15:19 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Top-level Entity: |RACE
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jan 31 15:15:19 2020       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; RACE                                        ;
+; Top-level Entity Name              ; RACE                                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 647                                         ;
+;     Total combinational functions  ; 640                                         ;
+;     Dedicated logic registers      ; 89                                          ;
+; Total registers                    ; 89                                          ;
+; Total pins                         ; 51                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; RACE               ; RACE               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                   ; Off                ;                    ;
+; VHDL Version                                                     ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; RACE.vhd                         ; yes             ; User VHDL File  ; D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 647   ;
+;                                             ;       ;
+; Total combinational functions               ; 640   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 371   ;
+;     -- 3 input functions                    ; 157   ;
+;     -- <=2 input functions                  ; 112   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 540   ;
+;     -- arithmetic mode                      ; 100   ;
+;                                             ;       ;
+; Total registers                             ; 89    ;
+;     -- Dedicated logic registers            ; 89    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 51    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; Q[2]  ;
+; Maximum fan-out                             ; 168   ;
+; Total fan-out                               ; 2510  ;
+; Average fan-out                             ; 3.02  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |RACE                      ; 640 (640)           ; 89 (89)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 51   ; 0            ; 0          ; |RACE               ; RACE        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; Q[6,7]                                ; Stuck at GND due to stuck port data_in ;
+; Q_LAST[6,7]                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; Q[6]          ; Stuck at GND              ; Q_LAST[6]                              ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 89    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; COUNTERCLK1HZ[0]                       ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RACE|P1_TIMER[8]          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |RACE|P2_TIMER[5]          ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |RACE|COUNTERCLK1HZ[6]     ;
+; 81:1               ; 6 bits    ; 324 LEs       ; 312 LEs              ; 12 LEs                 ; Yes        ; |RACE|Q[3]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RACE|SEG7                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |RACE|SEG7                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |RACE|SEG7                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RACE|SEG7                 ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 44 LEs               ; 40 LEs                 ; No         ; |RACE|SEG7                 ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 57 LEs               ; 69 LEs                 ; No         ; |RACE|SEG7                 ;
+; 33:1               ; 2 bits    ; 44 LEs        ; 6 LEs                ; 38 LEs                 ; No         ; |RACE|SEG7                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |RACE|SEG7                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------+
+; Source assignments for Top-level Entity: |RACE ;
++------------+---------+------+------------------+
+; Assignment ; Value   ; From ; To               ;
++------------+---------+------+------------------+
+; LOCATION   ; Pin_L19 ; -    ; SEG7[47]         ;
+; LOCATION   ; Pin_N20 ; -    ; SEG7[46]         ;
+; LOCATION   ; Pin_N19 ; -    ; SEG7[45]         ;
+; LOCATION   ; Pin_M20 ; -    ; SEG7[44]         ;
+; LOCATION   ; Pin_N18 ; -    ; SEG7[43]         ;
+; LOCATION   ; Pin_L18 ; -    ; SEG7[42]         ;
+; LOCATION   ; Pin_K20 ; -    ; SEG7[41]         ;
+; LOCATION   ; Pin_J20 ; -    ; SEG7[40]         ;
+; LOCATION   ; Pin_F17 ; -    ; SEG7[39]         ;
+; LOCATION   ; Pin_F20 ; -    ; SEG7[38]         ;
+; LOCATION   ; Pin_F19 ; -    ; SEG7[37]         ;
+; LOCATION   ; Pin_H19 ; -    ; SEG7[36]         ;
+; LOCATION   ; Pin_J18 ; -    ; SEG7[35]         ;
+; LOCATION   ; Pin_E19 ; -    ; SEG7[34]         ;
+; LOCATION   ; Pin_E20 ; -    ; SEG7[33]         ;
+; LOCATION   ; Pin_F18 ; -    ; SEG7[32]         ;
+; LOCATION   ; Pin_D22 ; -    ; SEG7[31]         ;
+; LOCATION   ; Pin_E17 ; -    ; SEG7[30]         ;
+; LOCATION   ; Pin_D19 ; -    ; SEG7[29]         ;
+; LOCATION   ; Pin_C20 ; -    ; SEG7[28]         ;
+; LOCATION   ; Pin_C19 ; -    ; SEG7[27]         ;
+; LOCATION   ; Pin_E21 ; -    ; SEG7[26]         ;
+; LOCATION   ; Pin_E22 ; -    ; SEG7[25]         ;
+; LOCATION   ; Pin_F21 ; -    ; SEG7[24]         ;
+; LOCATION   ; Pin_A19 ; -    ; SEG7[23]         ;
+; LOCATION   ; Pin_B22 ; -    ; SEG7[22]         ;
+; LOCATION   ; Pin_C22 ; -    ; SEG7[21]         ;
+; LOCATION   ; Pin_B21 ; -    ; SEG7[20]         ;
+; LOCATION   ; Pin_A21 ; -    ; SEG7[19]         ;
+; LOCATION   ; Pin_B19 ; -    ; SEG7[18]         ;
+; LOCATION   ; Pin_A20 ; -    ; SEG7[17]         ;
+; LOCATION   ; Pin_B20 ; -    ; SEG7[16]         ;
+; LOCATION   ; Pin_A16 ; -    ; SEG7[15]         ;
+; LOCATION   ; Pin_B17 ; -    ; SEG7[14]         ;
+; LOCATION   ; Pin_A18 ; -    ; SEG7[13]         ;
+; LOCATION   ; Pin_A17 ; -    ; SEG7[12]         ;
+; LOCATION   ; Pin_B16 ; -    ; SEG7[11]         ;
+; LOCATION   ; Pin_E18 ; -    ; SEG7[10]         ;
+; LOCATION   ; Pin_D18 ; -    ; SEG7[9]          ;
+; LOCATION   ; Pin_C18 ; -    ; SEG7[8]          ;
+; LOCATION   ; Pin_D15 ; -    ; SEG7[7]          ;
+; LOCATION   ; Pin_C17 ; -    ; SEG7[6]          ;
+; LOCATION   ; Pin_D17 ; -    ; SEG7[5]          ;
+; LOCATION   ; Pin_E16 ; -    ; SEG7[4]          ;
+; LOCATION   ; Pin_C16 ; -    ; SEG7[3]          ;
+; LOCATION   ; Pin_C15 ; -    ; SEG7[2]          ;
+; LOCATION   ; Pin_E15 ; -    ; SEG7[1]          ;
+; LOCATION   ; Pin_C14 ; -    ; SEG7[0]          ;
+; LOCATION   ; Pin_P11 ; -    ; CLK              ;
+; LOCATION   ; Pin_B8  ; -    ; RST              ;
+; LOCATION   ; Pin_A7  ; -    ; A_LOW            ;
++------------+---------+------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 51                          ;
+; cycloneiii_ff         ; 89                          ;
+;     ENA SCLR          ; 32                          ;
+;     plain             ; 57                          ;
+; cycloneiii_lcell_comb ; 641                         ;
+;     arith             ; 100                         ;
+;         2 data inputs ; 70                          ;
+;         3 data inputs ; 30                          ;
+;     normal            ; 541                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 127                         ;
+;         4 data inputs ; 371                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.50                       ;
+; Average LUT depth     ; 6.13                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Jan 31 15:15:05 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RACE -c RACE
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file race.vhd
+    Info (12022): Found design unit 1: RACE-BEHAVIORAL File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 19
+    Info (12023): Found entity 1: RACE File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 6
+Info (12127): Elaborating entity "RACE" for the top level hierarchy
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Mux0 File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 310
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "SEG7[7]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+    Warning (13410): Pin "SEG7[15]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+    Warning (13410): Pin "SEG7[23]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+    Warning (13410): Pin "SEG7[31]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+    Warning (13410): Pin "SEG7[39]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+    Warning (13410): Pin "SEG7[47]" is stuck at VCC File: D:/MSOE/2018_2019/q2_winter/ce1911_digital_logic_2/WK7_LAB/RACE/RACE.vhd Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 698 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 48 output pins
+    Info (21061): Implemented 647 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Fri Jan 31 15:15:19 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:22
+
+
